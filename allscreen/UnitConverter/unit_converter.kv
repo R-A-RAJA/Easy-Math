@@ -1,0 +1,86 @@
+
+#Conversion
+<UnitConverterView>:
+    name:"conversion"
+    FloatLayout:
+        size_hint: 1, .15
+        pos_hint: {"center_x": .5, "center_y": .95}
+        canvas.before:
+            Color:
+                rgba: [1,1,1,1]
+            RoundedRectangle:
+                radius:[0,0,58,58]
+                pos: self.pos
+                size: self.size
+    FloatLayout:
+        size_hint: 1, .5
+        pos_hint: {"center_x": .5, "center_y": .175}
+        canvas.before:
+            Color:
+                rgba: [.2,.2,.2,.8]
+            RoundedRectangle:
+                radius:[58,58,0,0]
+                pos: self.pos
+                size: self.size
+    FirstBoxLayout:
+        TitleLabel:
+            text:"Unit [color=#808080]converter[/color]"
+            font_size:60
+        BoxLayout:
+            spacing: 10
+            size_hint:1,.7
+            Spinner:
+                id:spinner1
+                text:"Select"
+                values:["inch","mm","cm",'m','km',"miles",'ml','l','mg','g','kg']
+                on_text:
+                    root.select_spinner1()
+                background_color:[1,95/255,5/255,0]
+                canvas.before:
+                    Color:
+                        rgba:  [1,0,0,1]
+                    RoundedRectangle:
+                        radius:[58,0,0,58]
+                        pos: self.pos
+                        size: self.size
+            Label:
+                text:"<- to ->"
+                color:[1,1,1,1]
+            Spinner:
+                id:spinner2
+                text:"Select"
+                values:[]
+                #on_text:
+                #  app.select_spinner2()
+                background_color:[1,95/255,5/255,0]
+                canvas.before:
+                    Color:
+                        rgba:  [1,0,0,1]
+                    RoundedRectangle:
+                        radius:[0,58,58,0]
+                        pos: self.pos
+                        size: self.size
+        BoxLayout:
+            Label1:
+                id:l_convert
+                text:'Select measurements'
+            NTextInput:
+                id:m_convert
+                hint_text:'Value'
+        Label1:
+            text:'Result'
+            id:res_convert
+            color:[1,0,0,1]
+            size_hint:1,.7
+            canvas.before:
+                Color:
+                    rgba: [1,1,1,1]
+                RoundedRectangle:
+                    radius:[58,58,58,58]
+                    pos: self.pos
+                    size: self.size 
+        MyButton:
+            size_hint:1,.7
+            text:'[b]CONVERT[/b]'
+            on_press:
+                root.convert()

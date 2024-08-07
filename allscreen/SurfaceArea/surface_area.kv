@@ -1,0 +1,669 @@
+
+#Surface area_3D
+<SurfaceAreaView>:
+    name:"area_3d"
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+        FirstBoxLayout:
+            size_hint_y: None
+            height: self.minimum_height
+        #Cube
+            TitleLabel:
+                text:'Cube'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Length of a side'
+                    size_hint_y: None
+                MyTextInput:
+                    id:a_cub
+                    size_hint_y: None
+                    hint_text:"Side"
+            BoxLayout:
+                orientation:'horizontal'
+                size_hint_y: None
+                spacing:20
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    id:l_a_res_cub
+                    text:'Result'
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:a_res_cub
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            BoxLayout:
+                spacing:20
+                size_hint_y: None
+                FloatLayout:
+                    MyButton:
+                        text:'[b]CSA of Cube[/b]'
+                        size_hint_y: None
+                        on_release:
+                            root.csa_cub()
+                FloatLayout:
+                    MyButton:
+                        text:'[b]TSA of Cube[/b]'
+                        size_hint_y: None
+                        on_release:
+                            root.tsa_cub()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #Cuboid
+            TitleLabel:
+                text:'Cuboid'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Length,Breadth,Height'
+                    size_hint_y: None
+                BoxLayout:
+                    spacing:20
+                    MyTextInput:
+                        id:a_cuboid_l
+                        size_hint_y: None
+                        hint_text:"l"
+                    MyTextInput:
+                        id:a_cuboid_b
+                        size_hint_y: None
+                        hint_text:"b"
+                    MyTextInput:
+                        id:a_cuboid_h
+                        size_hint_y: None
+                        hint_text:"h"
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Result'
+                    id:l_a_res_cuboid
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:a_res_cuboid
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            BoxLayout:
+                size_hint_y: None
+                spacing:20
+                FloatLayout:
+                    MyButton:
+                        text:'[b]CSA of Cuboid[/b]'
+                        size_hint_y: None
+                        on_release:
+                            root.csa_cuboid()
+                FloatLayout:
+                    MyButton:
+                        text:'[b]TSA of Cuboid[/b]'
+                        size_hint_y: None
+                        on_release:
+                            root.tsa_cuboid()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #Cylinder
+            TitleLabel:
+                text:'Cylinder'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Radius & Height'
+                    size_hint_y: None
+                BoxLayout:
+                    spacing:20
+                    MyTextInput:
+                        id:a_cy_r
+                        size_hint_y: None
+                        hint_text:'r'
+                    MyTextInput:
+                        id:a_cy_h
+                        size_hint_y: None
+                        hint_text:'h'
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Result'
+                    id:l_a_res_cy
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:a_res_cy
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            BoxLayout:
+                spacing:20
+                size_hint_y: None
+                FloatLayout:
+                    MyButton:
+                        text:'[b]CSA of Cylinder[/b]'
+                        size_hint_y: None
+                        on_release:
+                            root.csa_cy()
+                FloatLayout:
+                    MyButton:
+                        text:'[b]TSA of Cylinder[/b]'
+                        size_hint_y: None
+                        on_release:
+                            root.tsa_cy()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #Cone
+            TitleLabel:
+                text:'Cone'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Radius & Height'
+                    size_hint_y: None
+                BoxLayout:
+                    spacing:20
+                    MyTextInput:
+                        id:a_cone_r
+                        hint_text:'r'
+                        size_hint_y: None
+                    MyTextInput:
+                        id:a_cone_h
+                        hint_text:'h'
+                        size_hint_y: None
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Result'
+                    id:l_a_res_cone
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:a_res_cone
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            BoxLayout:
+                spacing:20
+                size_hint_y: None
+                FloatLayout:
+                    MyButton:
+                        text:'[b]CSA of Cone[/b]'
+                        size_hint_y: None
+                        on_release:
+                            root.csa_cone()
+                FloatLayout:
+                    MyButton:
+                        text:'[b]TSA of Cone[/b]'
+                        size_hint_y: None
+                        on_release:
+                            root.tsa_cone()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #Sphere
+            TitleLabel:
+                text:'Sphere'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Radius'
+                    size_hint_y: None
+                MyTextInput:
+                    id:a_sp_r
+                    size_hint_y: None
+                    hint_text:'r'
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Result'
+                    id:l_a_res_sp
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:a_res_sp
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            BoxLayout:
+                spacing:20
+                size_hint_y: None
+                FloatLayout:
+                    MyButton:
+                        text:'[b]CSA of Sphere[/b]'
+                        size_hint_y: None
+                        on_release:
+                            root.csa_sp()
+                FloatLayout:
+                    MyButton:
+                        text:'[b]TSA of Sphere[/b]'
+                        size_hint_y: None
+                        on_release:
+                            root.tsa_sp()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #Hemisphere
+            TitleLabel:
+                text:'Hemisphere'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Radius'
+                    size_hint_y: None
+                MyTextInput:
+                    id:a_hsp_r
+                    size_hint_y: None
+                    hint_text:'r'
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Result'
+                    id:l_a_res_hsp
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:a_res_hsp
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            BoxLayout:
+                spacing:20
+                size_hint_y: None
+                FloatLayout:
+                    MyButton:
+                        text:'[b]CSA[/b]'
+                        size_hint_y: None
+                        on_release:
+                            root.csa_hsp()
+                FloatLayout:
+                    MyButton:
+                        text:'[b]TSA[/b]'
+                        size_hint_y: None
+                        on_release:
+                            root.tsa_hsp()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #Frustum
+            TitleLabel:
+                text:'Frustum'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Radius(r,R) ,Height'
+                    size_hint_y: None
+                BoxLayout:
+                    spacing:20
+                    MyTextInput:
+                        id:a_frus_r
+                        hint_text:'r'
+                        size_hint_y: None
+                    MyTextInput:
+                        id:a_frus_R
+                        hint_text:'R'
+                        size_hint_y: None
+                    MyTextInput:
+                        id:a_frus_h
+                        hint_text:'h'
+                        size_hint_y: None
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Result'
+                    id:l_a_res_frus
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:a_res_frus
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            BoxLayout:
+                spacing:20
+                size_hint_y: None
+                FloatLayout:
+                    MyButton:
+                        text:'[b]CSA of Frustum[/b]'
+                        size_hint_y: None
+                        on_release:
+                            root.csa_frus()
+                FloatLayout:
+                    MyButton:
+                        text:'[b]TSA of Frustum[/b]'
+                        size_hint_y: None
+                        on_release:
+                            root.tsa_frus()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #HollowCylinder
+            TitleLabel:
+                text:'Hollow Cylinder'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Radius(r,R) ,Height'
+                    size_hint_y: None
+                BoxLayout:
+                    spacing:20
+                    MyTextInput:
+                        id:a_hocy_r
+                        size_hint_y: None
+                        hint_text:'r'
+                    MyTextInput:
+                        id:a_hocy_R
+                        size_hint_y: None
+                        hint_text:'R'
+                    MyTextInput:
+                        id:a_hocy_h
+                        size_hint_y: None
+                        hint_text:'h'
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Result'
+                    id:l_a_res_hocy
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:a_res_hocy
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            BoxLayout:
+                spacing:20
+                size_hint_y: None
+                FloatLayout:
+                    MyButton:
+                        text:'[b]CSA[/b]'
+                        size_hint_y: None
+                        on_release:
+                            root.csa_hocy()
+                FloatLayout:
+                    MyButton:
+                        text:'[b]TSA[/b]'
+                        size_hint_y: None
+                        on_release:
+                            root.tsa_hocy()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #HollowSphere
+            TitleLabel:
+                text:'Hollow Sphere'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Radius(r,R)'
+                    size_hint_y: None
+                BoxLayout:
+                    spacing:20
+                    MyTextInput:
+                        id:a_hosp_r
+                        size_hint_y: None
+                        hint_text:'r'
+                    MyTextInput:
+                        id:a_hosp_R
+                        size_hint_y: None
+                        hint_text:'R'
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Result'
+                    id:l_a_res_hosp
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:a_res_hosp
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            BoxLayout:
+                spacing:20
+                size_hint_y: None
+                FloatLayout:
+                    MyButton:
+                        text:'[b]CSA[/b]'
+                        size_hint_y: None
+                        on_release:
+                            root.csa_hosp()
+                FloatLayout:
+                    MyButton:
+                        text:'[b]TSA[/b]'
+                        size_hint_y: None
+                        on_release:
+                            root.tsa_hosp()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #HollowHemisphere
+            TitleLabel:
+                text:'Hollow Hemisphere'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Radius(r,R)'
+                    size_hint_y: None
+                BoxLayout:
+                    spacing:20
+                    MyTextInput:
+                        id:a_hohsp_r
+                        size_hint_y: None
+                        hint_text:'r'
+                    MyTextInput:
+                        id:a_hohsp_R
+                        size_hint_y: None
+                        hint_text:'R'
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Result'
+                    id:l_a_res_hohsp
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:a_res_hohsp
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            BoxLayout:
+                spacing:20
+                size_hint_y: None
+                FloatLayout:
+                    MyButton:
+                        text:'[b]CSA[/b]'
+                        size_hint_y: None
+                        on_release:
+                            root.csa_hohsp()
+                FloatLayout:
+                    MyButton:
+                        text:'[b]TSA[/b]'
+                        size_hint_y: None
+                        on_release:
+                            root.tsa_hohsp()

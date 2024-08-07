@@ -1,0 +1,103 @@
+
+<XOView>:
+    name:"xo"
+    FloatLayout:
+        size_hint: 1, .15
+        pos_hint: {"center_x": .5, "center_y": .95}
+        canvas.before:
+            Color:
+                rgba: [1,1,1,1]
+            RoundedRectangle:
+                radius:[0,0,58,58]
+                pos: self.pos
+                size: self.size
+    FloatLayout:
+        size_hint: 1, .63
+        pos_hint: {"center_x": .5, "center_y": .175}
+        canvas.before:
+            Color:
+                rgba: [.2,.2,.2,.8]
+            RoundedRectangle:
+                radius:[58,58,0,0]
+                pos: self.pos
+                size: self.size
+    FirstBoxLayout:
+        TitleLabel:
+            text:"X O [color=#808080]Game[/color]"
+            font_size:70 
+        BoxLayout:
+            spacing: 10
+            Label:
+            BoxLayout:
+                orientation:"vertical"
+                spacing: 10
+                Button:
+                    id:xo1
+                    text:""
+                    bold:True
+                    on_release:root.xo(xo1)
+                Button:
+                    id:xo4
+                    text:""
+                    bold:True
+                    on_release:root.xo(xo4)
+                Button:
+                    id:xo7
+                    text:""
+                    bold:True
+                    on_release:root.xo(xo7)
+            BoxLayout:
+                orientation:"vertical"
+                spacing: 10
+                Button:
+                    id:xo2
+                    text:""
+                    bold:True
+                    on_release:root.xo(xo2)
+                Button:
+                    id:xo5
+                    text:""
+                    bold:True
+                    on_release:root.xo(xo5)
+                Button:
+                    id:xo8
+                    text:""
+                    bold:True
+                    on_release:root.xo(xo8)
+            BoxLayout:
+                orientation:"vertical"
+                spacing: 10
+                Button:
+                    id:xo3
+                    text:""
+                    bold:True
+                    on_release:root.xo(xo3)
+                Button:
+                    id:xo6
+                    text:""
+                    bold:True
+                    on_release:root.xo(xo6)
+                Button:
+                    id:xo9
+                    text:""
+                    bold:True
+                    on_release:root.xo(xo9)
+            Label:
+        BoxLayout:
+            size_hint:1,.7
+            canvas.before:
+                Color:
+                    rgba: [1,1,1,1]
+                RoundedRectangle:
+                    radius:[58,58,58,58]
+                    pos: self.pos
+                    size: self.size 
+            Label1:
+                id:res_xo
+                text: "X goes first!"
+                color:[1,0,0,1]
+        MyButton:
+            size_hint:1,.7
+            on_release:
+                root.reset_xo()
+            text:"[b]RESET[/b]"

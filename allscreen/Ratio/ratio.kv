@@ -1,0 +1,63 @@
+
+#Ratio         
+<RatioView>:
+    name:"ratio"
+    FloatLayout:
+        size_hint: 1, .15
+        pos_hint: {"center_x": .5, "center_y": .95}
+        canvas.before:
+            Color:
+                rgba: [1,1,1,1]
+            RoundedRectangle:
+                radius:[0,0,58,58]
+                pos: self.pos
+                size: self.size
+    FloatLayout:
+        size_hint: 1, .2
+        pos_hint: {"center_x": .5, "center_y": .1}
+        canvas.before:
+            Color:
+                rgba: [.2,.2,.2,.8]
+            RoundedRectangle:
+                radius:[58,58,0,0]
+                pos: self.pos
+                size: self.size
+    FirstBoxLayout:
+        TitleLabel:
+            text:"Ratio [color=#808080]Calculator[/color]"
+        Label:
+        Label:
+        BoxLayout:
+            spacing: 10
+            MyTextInput:
+                id:an1
+                hint_text: "a" 
+            Label1:
+                text:' : '
+                color:[1,0,0,1]   
+            MyTextInput:
+                id:con1
+                hint_text: "b"  
+            Label1:
+                text:' = '  
+                color:[1,0,0,1]
+            MyTextInput:
+                id:an2
+                hint_text: "c" 
+            Label1:
+                text:' : '  
+                color:[1,0,0,1] 
+            Label1:
+                text:' ? '  
+                id:con2
+                color:[1,0,0,1]
+        Label:
+        Label:
+        Label:
+        BoxLayout:
+            spacing:10
+            MyButton:
+                size_hint:1,.7
+                on_release:
+                    root.ratio()
+                text:"[b]FIND MISSING[/b]"

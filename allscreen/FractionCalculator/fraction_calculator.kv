@@ -1,0 +1,105 @@
+
+#fraction
+<FractionCalculatorView>:
+    name:"fraction"
+    FloatLayout:
+        size_hint: 1, .15
+        pos_hint: {"center_x": .5, "center_y": .95}
+        canvas.before:
+            Color:
+                rgba: [1,1,1,1]
+            RoundedRectangle:
+                radius:[0,0,58,58]
+                pos: self.pos
+                size: self.size
+    FloatLayout:
+        size_hint: 1, .47
+        pos_hint: {"center_x": .5, "center_y": .175}
+        canvas.before:
+            Color:
+                rgba: [.2,.2,.2,.8]
+            RoundedRectangle:
+                radius:[58,58,0,0]
+                pos: self.pos
+                size: self.size
+    FirstBoxLayout:
+        TitleLabel:
+            text:'Fraction [color=#808080]Calculator[/color]'
+        MyGridLayout:
+            rows:3
+            cols:2
+            Label:
+            MyTextInput:
+                id:a_nume
+                hint_text:"Numerator"
+            Label1:
+                text:"1st Fraction"
+            Label:
+                text:"______"
+            Label:
+            MyTextInput:
+                id:a_deno
+                hint_text:"Denominator"
+        MyGridLayout:
+            rows:3
+            cols:2
+            Label:
+            MyTextInput:
+                id:b_nume
+                hint_text:"Numerator"
+            Label1:
+                text:"2nd Fraction"
+            Label:
+                text:"______"
+            Label:
+            MyTextInput:
+                id:b_deno
+                hint_text:"Denominator"
+        BoxLayout:
+            size_hint:1,.7
+            canvas.before:
+                Color:
+                    rgba: [1,1,1,1]
+                RoundedRectangle:
+                    radius:[58,58,58,58]
+                    pos: self.pos
+                    size: self.size 
+            Label1:
+                id:l_fra
+                text:"Result"
+                color:.5,.5,.5,1 
+            BoxLayout:
+                orientation:"vertical"
+                Label1:
+                    id:res_nume
+                    text:"0"
+                    color:[1,0,0,1]
+                Label:
+                    text:"_______"
+                    color:[1,0,0,1]
+                Label1:
+                    id:res_deno
+                    text:"0"
+                    color:[1,0,0,1]
+        BoxLayout:
+            spacing:20
+            MyButton:
+                size_hint:1,.5
+                text:"[b]+[/b]"
+                on_release:
+                    root.add_fra()
+            MyButton:
+                size_hint:1,.5
+                text:"[b]-[/b]"
+                on_release:
+                    root.sub_fra()
+            MyButton:
+                size_hint:1,.5
+                text:"[b]*[/b]"
+                on_release:
+                    root.mul_fra()
+            MyButton:
+                size_hint:1,.5
+                text:"[b]/[/b]"
+                on_release:
+                    root.div_fra()

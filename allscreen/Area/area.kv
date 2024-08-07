@@ -1,0 +1,386 @@
+#Area_2D
+<AreaView>:
+    name:"area_2d"
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+        FirstBoxLayout:
+            size_hint_y: None
+            height: self.minimum_height
+        #square
+            TitleLabel:
+                text:'Square'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Length of a side'
+                    size_hint_y: None
+                MyTextInput:
+                    id:a_sqr_s
+                    size_hint_y: None
+                    hint_text:"Side"
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Area'
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:a_res_sqr
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            MyButton:
+                text:'[b]Calculate Area of Square[/b]'
+                size_hint_y: None
+                on_release:
+                    root.a_sqr()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #rectangle
+            TitleLabel:
+                text:'Rectangle'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Length & Breadth '
+                    size_hint_y: None
+                BoxLayout:
+                    spacing:20
+                    MyTextInput:
+                        id:a_rect_l
+                        size_hint_y: None
+                        hint_text:"l"
+                    MyTextInput:
+                        id:a_rect_b
+                        size_hint_y: None
+                        hint_text:"b"
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Area'
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:a_res_rect
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            MyButton:
+                text:'[b]Calculate Area of Rectangle[/b]'
+                size_hint_y: None
+                on_release:
+                    root.a_rect()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #Triangle
+            TitleLabel:
+                text:'Triangle'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Base & Height'
+                    size_hint_y: None
+                BoxLayout:
+                    spacing:20
+                    MyTextInput:
+                        id:a_tri_b
+                        size_hint_y: None
+                        hint_text:'a'
+                    MyTextInput:
+                        id:a_tri_h
+                        size_hint_y: None
+                        hint_text:'b'
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Area'
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:a_res_tri
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            MyButton:
+                text:'[b]Calculate Area of Triangle[/b]'
+                size_hint_y: None
+                on_release:
+                    root.a_tri()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #Circle
+            TitleLabel:
+                text:'Circle'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Radius'
+                    size_hint_y: None
+                MyTextInput:
+                    id:a_cir_r
+                    hint_text:'r'
+                    size_hint_y: None
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Area'
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:a_res_cir
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            MyButton:
+                text:'[b]Calculate Area of Circle[/b]'
+                size_hint_y: None
+                on_release:
+                    root.a_cir()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #Rhombus
+            TitleLabel:
+                text:'Rhombus'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Length of a side'
+                    size_hint_y: None
+                BoxLayout:
+                    spacing:20
+                    MyTextInput:
+                        id:a_rhom_l
+                        size_hint_y: None
+                        hint_text:'l'
+                    MyTextInput:
+                        id:a_rhom_h
+                        hint_text:"h"
+                        size_hint_y: None
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Area'
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:a_res_rhom
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            MyButton:
+                text:'[b]Calculate Area of Rhombus[/b]'
+                size_hint_y: None
+                on_release:
+                    root.a_rhom()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #Parallelogram
+            TitleLabel:
+                text:'Parallelogram'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Base & Height'
+                    size_hint_y: None
+                BoxLayout:
+                    spacing:20
+                    MyTextInput:
+                        id:a_para_b
+                        size_hint_y: None
+                        hint_text:'b'
+                    MyTextInput:
+                        hint_text:'h'
+                        id:a_para_h
+                        size_hint_y: None
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Area'
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:a_res_para
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            MyButton:
+                text:'[b]Calculate Area of Parallelogram[/b]'
+                size_hint_y: None
+                on_release:
+                    root.a_para()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #Trapezium
+            TitleLabel:
+                text:'Trapezium'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Length(a,b) & Height'
+                    size_hint_y: None
+                BoxLayout:
+                    spacing:20
+                    MyTextInput:
+                        id:a_trap_a
+                        size_hint_y: None
+                        hint_text:'a'
+                    MyTextInput:
+                        hint_text:'b'
+                        id:a_trap_b
+                        size_hint_y: None
+                    MyTextInput:
+                        id:a_trap_h
+                        size_hint_y: None
+                        hint_text:'h'
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Area'
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:a_res_trap
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            MyButton:
+                text:'[b]Calculate Area of Trapezium[/b]'
+                size_hint_y: None
+                on_release:
+                    root.a_trap()

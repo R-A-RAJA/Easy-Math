@@ -1,0 +1,212 @@
+
+#Matrix
+<MatrixCalculatorView>:
+    name:"matrix"
+    FloatLayout:
+        size_hint: 1, .15
+        pos_hint: {"center_x": .5, "center_y": .95}
+        canvas.before:
+            Color:
+                rgba: [1,1,1,1]
+            RoundedRectangle:
+                radius:[0,0,58,58]
+                pos: self.pos
+                size: self.size
+    FloatLayout:
+        size_hint: 1, .47
+        pos_hint: {"center_x": .5, "center_y": .175}
+        canvas.before:
+            Color:
+                rgba: [.2,.2,.2,.8]
+            RoundedRectangle:
+                radius:[58,58,0,0]
+                pos: self.pos
+                size: self.size
+    FirstBoxLayout:
+        TitleLabel:
+            text:'Matrix [color=#808080]Calculator[/color]'
+    #1st matrix
+        BoxLayout:
+            BoxLayout:
+                orientation:'vertical'
+                Label:
+                Label1:
+                    text:"Enter 1st Matrix"
+            BoxLayout:
+                Label:
+                    text:"{"
+                GridLayout:
+                    rows:3
+                    cols:1
+                    MyTextInput:
+                        hint_text:"a11"
+                        id:a11
+                    MyTextInput:
+                        hint_text:"a21"
+                        id:a21
+                    MyTextInput:
+                        hint_text:"a31"
+                        id:a31
+                GridLayout:
+                    rows:3
+                    cols:1
+                    MyTextInput:
+                        hint_text:"a12"
+                        id:a12
+                    MyTextInput:
+                        hint_text:"a22"
+                        id:a22
+                    MyTextInput:
+                        hint_text:"a32"
+                        id:a32
+                GridLayout:
+                    rows:3
+                    cols:1
+                    MyTextInput:
+                        hint_text:"a13"
+                        id:a13
+                    MyTextInput:
+                        hint_text:"a23"
+                        id:a23
+                    MyTextInput:
+                        hint_text:"a33"
+                        id:a33
+                Label:
+                    text:"}"
+        #2nd matrix
+        BoxLayout:
+            BoxLayout:
+                orientation:'vertical'
+                Label:
+                Label1:
+                    text:"Enter 2nd Matrix"
+                Label:
+            BoxLayout:
+                Label:
+                    text:"{"
+                GridLayout:
+                    rows:3
+                    cols:1
+                    MyTextInput:
+                        hint_text:"b11"
+                        id:b11
+                    MyTextInput:
+                        hint_text:"b21"
+                        id:b21
+                    MyTextInput:
+                        hint_text:"b31"
+                        id:b31
+                GridLayout:
+                    rows:3
+                    cols:1
+                    MyTextInput:
+                        hint_text:"b12"
+                        id:b12
+                    MyTextInput:
+                        hint_text:"b22"
+                        id:b22
+                    MyTextInput:
+                        hint_text:"b32"
+                        id:b32
+                GridLayout:
+                    rows:3
+                    cols:1
+                    MyTextInput:
+                        hint_text:"b13"
+                        id:b13
+                    MyTextInput:
+                        hint_text:"b23"
+                        id:b23
+                    MyTextInput:
+                        hint_text:"b33"
+                        id:b33
+                Label:
+                    text:"}"
+    #Matrix result
+        BoxLayout:
+            size_hint:1,.7
+            canvas.before:
+                Color:
+                    rgba: [1,1,1,1]
+                RoundedRectangle:
+                    radius:[58,58,58,58]
+                    pos: self.pos
+                    size: self.size 
+            BoxLayout:
+                orientation:'vertical'
+                Label:
+                Label1:
+                    id:l_mat
+                    text:"Result"
+                    color:[0,0,0,1]
+                Label:
+            BoxLayout:
+                Label:
+                    text:"{"
+                    color:[1,0,0,1]
+                GridLayout:
+                    rows:3
+                    cols:1
+                    Label1:
+                        text:"0"
+                        color:[1,0,0,1]
+                        id:c11
+                    Label1:
+                        text:"0"
+                        color:[1,0,0,1]
+                        id:c21
+                    Label1:
+                        text:"0"
+                        color:[1,0,0,1]
+                        id:c31
+                GridLayout:
+                    rows:3
+                    cols:1
+                    Label1:
+                        text:"0"
+                        color:[1,0,0,1]
+                        id:c12
+                    Label1:
+                        text:"0"
+                        color:[1,0,0,1]
+                        id:c22
+                    Label1:
+                        text:"0"
+                        color:[1,0,0,1]
+                        id:c32
+                GridLayout:
+                    rows:3
+                    cols:1
+                    Label1:
+                        text:"0"
+                        color:[1,0,0,1]
+                        id:c13
+                    Label1:
+                        text:"0"
+                        color:[1,0,0,1]
+                        id:c23
+                    Label1:
+                        text:"0"
+                        color:[1,0,0,1]
+                        id:c33
+                Label:
+                    text:"}"
+                    color:[1,0,0,1]
+    #matrix button
+        BoxLayout:
+            spacing:20
+            MyButton:
+                size_hint:1,.7
+                text:"[b]+[/b]"
+                on_release:
+                    root.add_mat()
+            MyButton:
+                size_hint:1,.7
+                text:"[b]-[/b]"
+                on_release:
+                    root.sub_mat()
+            MyButton:
+                size_hint:1,.7
+                text:"[b]*[/b]"
+                on_release:
+                    root.mul_mat()

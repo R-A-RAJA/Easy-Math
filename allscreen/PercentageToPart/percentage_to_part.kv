@@ -1,0 +1,69 @@
+
+#Percentage to part
+<PercentageToPartView>:
+    name:"tax"
+    FloatLayout:
+        size_hint: 1, .15
+        pos_hint: {"center_x": .5, "center_y": .95}
+        canvas.before:
+            Color:
+                rgba: [1,1,1,1]
+            RoundedRectangle:
+                radius:[0,0,58,58]
+                pos: self.pos
+                size: self.size
+    FloatLayout:
+        size_hint: 1, .42
+        pos_hint: {"center_x": .5, "center_y": .175}
+        canvas.before:
+            Color:
+                rgba: [.2,.2,.2,.8]
+            RoundedRectangle:
+                radius:[58,58,0,0]
+                pos: self.pos
+                size: self.size
+    FirstBoxLayout:
+        TitleLabel:
+            text:"Percentage [color=#808080]to [/color]Part"
+            font_size:60
+        BoxLayout:
+            spacing: 10
+            Label1:
+                text: "Whole/Price"
+            NTextInput:
+                size_hint:.9,.7
+                font_size: 45
+                id:tax_price
+                hint_text: "whole"
+        BoxLayout:
+            spacing:10
+            Label1:
+                text: "Percentage" 
+            NTextInput:
+                size_hint:.9,.7
+                font_size: 45
+                id:tax_rate
+                hint_text:"%"
+        BoxLayout:
+            size_hint:1,.7
+            canvas.before:
+                Color:
+                    rgba: [1,1,1,1]
+                RoundedRectangle:
+                    radius:[58,58,58,58]
+                    pos: self.pos
+                    size: self.size 
+            Label1:
+                text: "Part" 
+                color:.5,.5,.5,1  
+            Label:
+                id:tax_res
+                text:"" 
+                color:[1,0,0,1]             
+        MyButton:
+            size_hint:1,.7
+            font_size: 30
+            on_release:
+                root.tax()
+            text:"[b]CALCULATE[/b]"
+            

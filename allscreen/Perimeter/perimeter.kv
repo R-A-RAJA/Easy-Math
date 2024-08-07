@@ -1,0 +1,390 @@
+
+            
+#Perimeter_2D
+<PerimeterView>:
+    name:"peri_2d"
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+        FirstBoxLayout:
+            size_hint_y: None
+            height: self.minimum_height
+        #square
+            TitleLabel:
+                text:'Square'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size 
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Length of a side'
+                    size_hint_y: None
+                MyTextInput:
+                    id:p_sqr_s
+                    size_hint_y: None
+                    hint_text:"Side"
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Perimeter'
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:p_res_sqr
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            MyButton:
+                text:'[b]Calculate Perimeter of Square[/b]'
+                size_hint_y: None
+                on_release:
+                    root.p_sqr()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #rectangle
+            TitleLabel:
+                text:'Rectangle'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Length & Breadth '
+                    size_hint_y: None
+                BoxLayout:
+                    spacing:20
+                    MyTextInput:
+                        id:p_rect_l
+                        size_hint_y: None
+                        hint_text:"l"
+                    MyTextInput:
+                        id:p_rect_b
+                        size_hint_y: None
+                        hint_text:"b"
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Perimeter '
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:p_res_rect
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            MyButton:
+                text:'[b]Calculate Perimeter of Rectangle[/b]'
+                size_hint_y: None
+                on_release:
+                    root.p_rect()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #Triangle
+            TitleLabel:
+                text:'Triangle'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Length of 3 side'
+                    size_hint_y: None
+                BoxLayout:
+                    spacing:20
+                    MyTextInput:
+                        id:p_tri_a
+                        size_hint_y: None
+                        hint_text:'a'
+                    MyTextInput:
+                        id:p_tri_b
+                        size_hint_y: None
+                        hint_text:'b'
+                    MyTextInput:
+                        id:p_tri_c
+                        size_hint_y: None
+                        hint_text:'c'
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Perimeter'
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:p_res_tri
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            MyButton:
+                text:'[b]Calculate Perimeter of Triangle[/b]'
+                size_hint_y: None
+                on_release:
+                    root.p_tri()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #Circle
+            TitleLabel:
+                text:'Circle'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Radius'
+                    size_hint_y: None
+                MyTextInput:
+                    id:p_cir_r
+                    hint_text:'r'
+                    size_hint_y: None
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Perimeter'
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:p_res_cir
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            MyButton:
+                text:'[b]Calculate Perimeter of Circle[/b]'
+                size_hint_y: None
+                on_release:
+                    root.p_cir()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #Rhombus
+            TitleLabel:
+                text:'Rhombus'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Length of a side'
+                    size_hint_y: None
+                MyTextInput:
+                    id:p_rhom_s
+                    size_hint_y: None
+                    hint_text:'side'
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Perimeter'
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:p_res_rhom
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            MyButton:
+                text:'[b]Calculate Perimeter of Rhombus[/b]'
+                size_hint_y: None
+                on_release:
+                    root.p_rhom()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #Parallelogram
+            TitleLabel:
+                text:'Parallelogram'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Length & Breadth'
+                    size_hint_y: None
+                BoxLayout:
+                    spacing:20
+                    MyTextInput:
+                        id:p_para_l
+                        size_hint_y: None
+                        hint_text:'l'
+                    MyTextInput:
+                        hint_text:'b'
+                        id:p_para_b
+                        size_hint_y: None
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Perimeter '
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:p_res_para
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            MyButton:
+                text:'[b]Calculate Perimeter of Parallelogram[/b]'
+                size_hint_y: None
+                on_release:
+                    root.p_para()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #Trapezium
+            TitleLabel:
+                text:'Trapezium'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Length of sides'
+                    size_hint_y: None
+                BoxLayout:
+                    spacing:20
+                    MyTextInput:
+                        id:p_trap_a
+                        size_hint_y: None
+                        hint_text:'a'
+                    MyTextInput:
+                        hint_text:'b'
+                        id:p_trap_b
+                        size_hint_y: None
+                    MyTextInput:
+                        id:p_trap_c
+                        size_hint_y: None
+                        hint_text:'c'
+                    MyTextInput:
+                        hint_text:'d'
+                        id:p_trap_d
+                        size_hint_y: None
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Perimeter'
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:p_res_trap
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            MyButton:
+                text:'[b]Calculate Perimeter of Trapezium[/b]'
+                size_hint_y: None
+                on_release:
+                    root.p_trap()

@@ -1,0 +1,71 @@
+
+#Flames               
+<FlamesView>:
+    name:"flames"
+    FloatLayout:
+        size_hint: 1, .15
+        pos_hint: {"center_x": .5, "center_y": .95}
+        canvas.before:
+            Color:
+                rgba: [1,1,1,1]
+            RoundedRectangle:
+                radius:[0,0,58,58]
+                pos: self.pos
+                size: self.size
+    FloatLayout:
+        size_hint: 1, .5
+        pos_hint: {"center_x": .5, "center_y": .175}
+        canvas.before:
+            Color:
+                rgba: [.2,.2,.2,.8]
+            RoundedRectangle:
+                radius:[58,58,0,0]
+                pos: self.pos
+                size: self.size
+    FirstBoxLayout:
+        TitleLabel:
+            text:"Flames"
+            font_size:70 
+        BoxLayout:
+            spacing: 10
+            Label1:
+                text: "1st Name"
+            NTextInput:
+                size_hint:.9,.7
+                font_size: 45
+                id:flames1
+                hint_text: "name 1"        
+        BoxLayout:
+            orientation:'horizontal'
+            spacing:10
+            Label1:
+                text: "2nd Name" 
+            NTextInput:
+                size_hint:.9,.7
+                font_size: 45
+                id:flames2
+                hint_text:"name 2"
+        BoxLayout:
+            size_hint:1,.7
+            canvas.before:
+                Color:
+                    rgba: [1,1,1,1]
+                RoundedRectangle:
+                    radius:[58,58,58,58]
+                    pos: self.pos
+                    size: self.size 
+            Label1:
+                text: "Flames" 
+                color:.5,.5,.5,1  
+            Label:
+                id:flames_res
+                text:"" 
+                color:[1,0,0,1]               
+        BoxLayout:
+            orientation:'horizontal'
+            spacing:10
+            MyButton:
+                size_hint:1,.7
+                on_release:
+                    root.flames()
+                text:"[b]FIND[/b]"

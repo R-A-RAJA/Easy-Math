@@ -1,0 +1,559 @@
+
+#volume_3D
+<VolumeView>:
+    name:"vol_3d"
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+        FirstBoxLayout:
+            size_hint_y: None
+            height: self.minimum_height
+        #Cube
+            TitleLabel:
+                text:'Cube'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Length of a side'
+                    size_hint_y: None
+                MyTextInput:
+                    id:v_cub
+                    size_hint_y: None
+                    hint_text:"Side"
+            BoxLayout:
+                orientation:'horizontal'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                spacing:20
+                Label1:
+                    text:'Volume'
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:v_res_cub
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            MyButton:
+                text:'[b]Volume of Cube[/b]'
+                size_hint_y: None
+                on_release:
+                    root.v_cub()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #Cuboid
+            TitleLabel:
+                text:'Cuboid'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Length,Breadth,Height'
+                    size_hint_y: None
+                BoxLayout:
+                    spacing:20
+                    MyTextInput:
+                        id:v_cuboid_l
+                        size_hint_y: None
+                        hint_text:"l"
+                    MyTextInput:
+                        id:v_cuboid_b
+                        size_hint_y: None
+                        hint_text:"b"
+                    MyTextInput:
+                        id:v_cuboid_h
+                        size_hint_y: None
+                        hint_text:"h"
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Volume'
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:v_res_cuboid
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            MyButton:
+                text:'[b]Volume of Cuboid[/b]'
+                size_hint_y: None
+                on_release:
+                    root.v_cuboid()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #Cylinder
+            TitleLabel:
+                text:'Cylinder'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Radius & Height'
+                    size_hint_y: None
+                BoxLayout:
+                    spacing:20
+                    MyTextInput:
+                        id:v_cy_r
+                        size_hint_y: None
+                        hint_text:'r'
+                    MyTextInput:
+                        id:v_cy_h
+                        size_hint_y: None
+                        hint_text:'h'
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Volume'
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:v_res_cy
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            MyButton:
+                text:'[b]Volume of Cylinder[/b]'
+                size_hint_y: None
+                on_release:
+                    root.v_cy()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #Cone
+            TitleLabel:
+                text:'Cone'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Radius & Height'
+                    size_hint_y: None
+                BoxLayout:
+                    spacing:20
+                    MyTextInput:
+                        id:v_cone_r
+                        hint_text:'r'
+                        size_hint_y: None
+                    MyTextInput:
+                        id:v_cone_h
+                        hint_text:'h'
+                        size_hint_y: None
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Volume'
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:v_res_cone
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            MyButton:
+                text:'[b]Volume of Cone[/b]'
+                size_hint_y: None
+                on_release:
+                    root.v_cone()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #Sphere
+            TitleLabel:
+                text:'Sphere'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Radius'
+                    size_hint_y: None
+                MyTextInput:
+                    id:v_sp_r
+                    size_hint_y: None
+                    hint_text:'r'
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Volume'
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:v_res_sp
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            MyButton:
+                text:'[b]Volume of Sphere[/b]'
+                size_hint_y: None
+                on_release:
+                    root.v_sp()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #Hemisphere
+            TitleLabel:
+                text:'Hemisphere'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Radius'
+                    size_hint_y: None
+                MyTextInput:
+                    id:v_hsp_r
+                    size_hint_y: None
+                    hint_text:'r'
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Volume'
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:v_res_hsp
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            MyButton:
+                text:'[b]Volume of Hemisphere[/b]'
+                size_hint_y: None
+                on_release:
+                    root.v_hsp()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #Frustum
+            TitleLabel:
+                text:'Frustum'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Radius(r,R) ,Height'
+                    size_hint_y: None
+                BoxLayout:
+                    spacing:20
+                    MyTextInput:
+                        id:v_frus_r
+                        hint_text:'r'
+                        size_hint_y: None
+                    MyTextInput:
+                        id:v_frus_R
+                        hint_text:'R'
+                        size_hint_y: None
+                    MyTextInput:
+                        id:v_frus_h
+                        hint_text:'h'
+                        size_hint_y: None
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Volume'
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:v_res_frus
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            MyButton:
+                text:'[b]Volume of Frustum[/b]'
+                size_hint_y: None
+                on_release:
+                    root.v_frus()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #HollowCylinder
+            TitleLabel:
+                text:'Hollow Cylinder'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Radius(r,R) ,Height'
+                    size_hint_y: None
+                BoxLayout:
+                    spacing:20
+                    MyTextInput:
+                        id:v_hocy_r
+                        size_hint_y: None
+                        hint_text:'r'
+                    MyTextInput:
+                        id:v_hocy_R
+                        size_hint_y: None
+                        hint_text:'R'
+                    MyTextInput:
+                        id:v_hocy_h
+                        size_hint_y: None
+                        hint_text:'h'
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Volume'
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:v_res_hocy
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            MyButton:
+                text:'[b]Volume of Hollow Cylinder[/b]'
+                size_hint_y: None
+                on_release:
+                    root.v_hocy()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #HollowSphere
+            TitleLabel:
+                text:'Hollow Sphere'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Radius(r,R)'
+                    size_hint_y: None
+                BoxLayout:
+                    spacing:20
+                    MyTextInput:
+                        id:v_hosp_r
+                        size_hint_y: None
+                        hint_text:'r'
+                    MyTextInput:
+                        id:v_hosp_R
+                        size_hint_y: None
+                        hint_text:'R'
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Volume'
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:v_res_hosp
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            MyButton:
+                text:'[b]Volume of Hollow Sphere[/b]'
+                size_hint_y: None
+                on_release:
+                    root.v_hosp()
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:  1, 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size[0], 1
+        #HollowHemisphere
+            TitleLabel:
+                text:'Hollow Hemisphere'
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[58,58,0,0]
+                        pos: self.pos
+                        size: self.size
+            BoxLayout:
+                size_hint_y: None
+                Label1:
+                    text:'Radius(r,R)'
+                    size_hint_y: None
+                BoxLayout:
+                    spacing:20
+                    MyTextInput:
+                        id:v_hohsp_r
+                        size_hint_y: None
+                        hint_text:'r'
+                    MyTextInput:
+                        id:v_hohsp_R
+                        size_hint_y: None
+                        hint_text:'R'
+            BoxLayout:
+                size_hint_y: None
+                canvas.before:
+                    Color:
+                        rgba: 1,1,1,1
+                    RoundedRectangle:
+                        radius:[0,0,58,58]
+                        pos: self.pos
+                        size: self.size
+                Label1:
+                    text:'Volume'
+                    size_hint_y: None
+                    color:.5,.5,.5,1
+                Label:
+                    text:''
+                    id:v_res_hohsp
+                    color:[1,0,0,1]
+                    size_hint_y: None
+            MyButton:
+                text:'[b]Volume of Hollow Hemisphere[/b]'
+                size_hint_y: None
+                on_release:
+                    root.v_hohsp()

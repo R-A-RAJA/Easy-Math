@@ -1,0 +1,98 @@
+
+
+#Type of matrix
+<MatrixTypeFinderView>:
+    name:"type_matrix"
+    FloatLayout:
+        size_hint: 1, .15
+        pos_hint: {"center_x": .5, "center_y": .95}
+        canvas.before:
+            Color:
+                rgba: [1,1,1,1]
+            RoundedRectangle:
+                radius:[0,0,58,58]
+                pos: self.pos
+                size: self.size
+    FloatLayout:
+        size_hint: 1, .75
+        pos_hint: {"center_x": .5, "center_y": .175}
+        canvas.before:
+            Color:
+                rgba: [.2,.2,.2,.8]
+            RoundedRectangle:
+                radius:[58,58,0,0]
+                pos: self.pos
+                size: self.size
+    FirstBoxLayout:
+#matrix
+        TitleLabel:
+            size_hint:1,.25
+            text:'Matrix Type [color=#808080]Finder[/color]'
+        BoxLayout:
+            size_hint:1,.7
+            BoxLayout:
+                orientation:'vertical'
+                Label:
+                Label1:
+                    text:"Enter a Matrix"
+                Label:
+            BoxLayout:
+                Label:
+                    text:"{"
+                GridLayout:
+                    rows:3
+                    cols:1
+                    MyTextInput:
+                        hint_text:"a11"
+                        id:d11
+                    MyTextInput:
+                        hint_text:"a21"
+                        id:d21
+                    MyTextInput:
+                        hint_text:"a31"
+                        id:d31
+                GridLayout:
+                    rows:3
+                    cols:1
+                    MyTextInput:
+                        hint_text:"a12"
+                        id:d12
+                    MyTextInput:
+                        hint_text:"a22"
+                        id:d22
+                    MyTextInput:
+                        hint_text:"a32"
+                        id:d32
+                GridLayout:
+                    rows:3
+                    cols:1
+                    MyTextInput:
+                        hint_text:"a13"
+                        id:d13
+                    MyTextInput:
+                        hint_text:"a23"
+                        id:d23
+                    MyTextInput:
+                        hint_text:"a33"
+                        id:d33
+                Label:
+                    text:"}"
+    #Matrix Type result
+        Label1:
+            id:res_type_matrix
+            text:"Type of Matrix"
+            color:[1,0,0,1]
+            size_hint:1,.6
+            canvas.before:
+                Color:
+                    rgba: [1,1,1,1]
+                RoundedRectangle:
+                    radius:[58,58,58,58]
+                    pos: self.pos
+                    size: self.size 
+    #matrix button
+        MyButton:
+            size_hint:1,.6
+            text:"[b]FIND[/b]"
+            on_release:
+                root.type_matrix()
