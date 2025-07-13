@@ -33,9 +33,13 @@ This app is specially designed for **students up to 10th grade**, providing a su
 
 ## 📸 Sample UI Screens (Planned)
 
-- 📱 Simple Calculator  ![simple calculator](https://github.com/user-attachments/assets/3264615e-001e-42ff-83ff-c5276bd0607f)
-- 📈 SI/CI Calculator  ![si ci](https://github.com/user-attachments/assets/53b91b23-8ce2-4331-b6f2-a5c2415c4c15)
-- 🧠 Scientific Calculator  ![scientific calculator](https://github.com/user-attachments/assets/f2fc863e-dda9-4d0b-865b-0f20bce4fa34)
-- 🔄 List  ![list 2](https://github.com/user-attachments/assets/def01e07-c6a9-4d1d-b225-efe40a50c4be)
+- 📱 Simple Calculator
+- ![simple calculator](https://github.com/user-attachments/assets/3264615e-001e-42ff-83ff-c5276bd0607f)
+- 📈 SI/CI Calculator
+- ![si ci](https://github.com/user-attachments/assets/53b91b23-8ce2-4331-b6f2-a5c2415c4c15)
+- 🧠 Scientific Calculator
+- ![scientific calculator](https://github.com/user-attachments/assets/f2fc863e-dda9-4d0b-865b-0f20bce4fa34)
+- 🔄 List
+- ![list 2](https://github.com/user-attachments/assets/def01e07-c6a9-4d1d-b225-efe40a50c4be)
 
 ---
